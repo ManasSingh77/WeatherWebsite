@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Weather Forecast</h1>
+        <form id="location-form" action="/submit" method="post">
+            <input type="text" id="location-input" name="city" placeholder="Enter City Name">
+            <input type="submit" value="Get Weather"></input>
+        </form>
+        <% if(locals.City){ %>
+        <div class="weather-info">
+            <h2 id="city-name"><%=City%></h2>
+            <p id="temperature"><%=temp%></p>
+            <p id="weather-description"><%=weather%></p>
+            <p id="humidity"><%=humidity%></p>
+            <p id="wind"><%=wind%></p>
+        </div>
+    <% } %>
+    </div>
+</body>
+</html>
